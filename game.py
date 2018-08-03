@@ -88,7 +88,7 @@ def game_intro():
             if event.type == pygame.QUIT:
                 quitgame()
        
-        gameDisplay.fill(black)
+        gameDisplay.fill(white)
         largeText = pygame.font.SysFont("comicsansms",115)
         TextSurf, TextRect = text_objects("A Bit Racey", largeText)
         TextRect.center = ((display_width/2),(display_height/2))
