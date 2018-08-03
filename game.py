@@ -2,6 +2,7 @@ import pygame
 import time
 import random
 
+pygame.mixer.pre_init(44100, 16, 2, 4096)
 pygame.init()
 
 display_width = 800
@@ -31,7 +32,7 @@ carImg = pygame.transform.rotate(carImg,90)
 gameIcon = pygame.image.load('ABitRaceyIconImage.png')
 pygame.display.set_icon(gameIcon)
 
-#crash_sound = pygame.mixer.Sound("CrashSounds.wav")
+crash_sound = pygame.mixer.Sound('CrashSounds.ogg')
 #pygame.mixer.music.load('jazz.wav')
 #pygame.mixer.music.play(-1)
 
@@ -67,7 +68,7 @@ def message_display(text):
 
 def crash():
 
-    #pygame.mixer.Sound.play(crash_sound)
+    pygame.mixer.Sound.play(crash_sound)
     #pygame.mixer.music.stop()
     
     message_display('You Crashed')
